@@ -1,0 +1,4 @@
+interface:
+  display_name: "漫画翻译与回填"
+  short_description: "在聊天中翻译漫画，自动提取定位、分批续译、核对语义并回填到新目录"
+  default_prompt: "使用 $comic-translate 翻译我指定目录里的漫画，保留原文尺度和人物关系，完成检查并输出新文件夹。"

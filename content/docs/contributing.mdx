@@ -1,0 +1,31 @@
+---
+title: 把新能力收进工具箱
+description: 源文件、展示信息和使用文档各有归处。
+---
+
+## 添加一个条目
+
+1. 将技能放在 `skills/<id>/`，MCP 放在 `mcp/`，工作流放在 `workflows/`。
+2. 在 `registry.json` 登记 id、类型、中文标题、简介、标签、状态、版本、依赖和文档路径。
+3. 在 `content/docs/` 添加对应页面，写清安装、调用示例、前置条件、限制和来源，并加入对应目录的 meta.json。
+4. 运行检查和构建，预览新增条目及链接。
+
+```bash
+npm run catalog:generate
+npm run check
+npm run build
+```
+
+首页和 `public/catalog.json` 从 registry 生成，不能手动修改生成文件。目录校验会拦截重复 id、源文件丢失、文档缺失和技能名称不一致。
+
+## 整理已有技能
+
+只导入需要维护的文件，避免连同 `.git`、本机配置、运行结果和私人样本一起复制。第三方内容先确认许可证，并注明来源；不要将其改标成自己的原创。
+
+脚本中的本机路径改为环境变量或参数。示例配置保留占位值，真实配置放在本地。新增服务独立管理运行依赖，不让文档站安装过程启动 MCP 服务。
+
+## 网站发布
+
+仓库提供 GitHub Actions：检查通过后，在主分支推送时构建并发布到 GitHub Pages。仓库的 Pages 来源需设为 **GitHub Actions**。
+
+项目站路径通过 `SITE_BASE_PATH=/swell-agent-toolbox` 构建。使用独立域名或根路径部署时将它置空。文档站是静态页面，不需要常驻 Node 服务，MCP 服务单独运行。

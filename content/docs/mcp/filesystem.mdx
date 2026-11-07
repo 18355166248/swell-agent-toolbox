@@ -1,0 +1,34 @@
+---
+title: 本地文件连接
+description: 通过官方 Filesystem MCP，将一个明确的目录连接到智能体。
+---
+
+此条目提供第三方 MCP 的配置示例，没有在本仓库实现、部署或自动启动服务器。
+
+## 配置示例
+
+适用于接受 `mcpServers` JSON 配置的客户端。将目录占位符替换成你允许操作的绝对目录：
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "D:\\Workspace\\my-project"]
+    }
+  }
+}
+```
+
+需要 Node.js 与可用的 npm。不同客户端的设置位置和字段可能不同，请按其 MCP 接入文档调整，不能直接把这份 JSON 当作所有客户端通用格式。
+
+## 能力与范围
+
+Filesystem 服务可提供读取、搜索和写入等文件操作，不是只读连接。只指定需要的工作目录，在客户端管理写操作的确认方式。配置文件中不填写私人密钥，实际工作目录由使用者在本地决定。
+
+## 上游与配置文件
+
+- [官方服务器说明](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)
+- 仓库路径：`mcp/configs/filesystem/config.example.json`
+
+后续自己开发的 MCP 服务放在 `mcp/servers/`，各自声明依赖和启动方式，再登记到工具目录。

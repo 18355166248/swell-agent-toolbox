@@ -1,0 +1,43 @@
+{
+  "name": "swell-agent-toolbox",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "serve out",
+    "types:check": "next typegen && tsc --noEmit",
+    "catalog:generate": "node scripts/catalog.mjs",
+    "predev": "npm run catalog:generate",
+    "prebuild": "npm run catalog:generate",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run catalog:generate && npm test && npm run types:check",
+    "skill:install": "node scripts/install-skill.mjs"
+  },
+  "dependencies": {
+    "cn": "^0.5.0",
+    "fumadocs-core": "16.18.0",
+    "fumadocs-mdx": "15.5.0",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.18.0",
+    "lucide-react": "^1.61.0",
+    "next": "16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.31",
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "yaml": "^2.9.1"
+  },
+  "description": "A personal collection of reusable skills, MCP integrations and agent workflows",
+  "engines": {
+    "node": ">=22.22.0"
+  }
+}

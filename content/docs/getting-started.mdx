@@ -1,0 +1,51 @@
+---
+title: 从一个技能开始
+description: 获取工具箱，选择需要的能力，然后在聊天中使用。
+---
+
+## 1. 获取仓库
+
+```bash
+git clone https://github.com/18355166248/swell-agent-toolbox.git
+cd swell-agent-toolbox
+```
+
+安装技能只需要 Node.js 22.22 或更高版本，不需要先安装文档站的全部依赖。
+
+## 2. 安装需要的技能
+
+```bash
+npm run skill:install -- comic-translate
+```
+
+默认安装到 Codex 的个人技能目录：设置 `CODEX_HOME` 时使用其下的 `skills`，否则使用用户目录下的 `.codex/skills`。
+
+其他目标可显式指定：
+
+```bash
+npm run skill:install -- toolbox-maintainer --client claude
+npm run skill:install -- comic-translate --target ./local-skills --dry-run
+```
+
+`--dry-run` 只展示安装位置，不创建文件。目标已存在时安装器会停止，避免覆盖自己的修改。更新前可以比较目录，保留旧副本后再安装。
+
+## 3. 配好技能自己的依赖
+
+复制技能不等于安装它调用的所有工具。比如漫画技能依赖独立的 `swell-cartoon-translate` 项目，需要设置 `CTT_REPO` 或传入 `--repo`。每个详情页都列出相应要求。
+
+## 4. 在聊天中调用
+
+```text
+用 $comic-translate 翻译我指定的漫画章节，保留原文尺度，检查后输出到新文件夹。
+```
+
+让智能体读取已安装的技能并执行。较长任务会把进度写入运行目录，可在后续聊天中提供该目录继续；技能不是聊天结束后仍会运行的后台服务。
+
+## 本地预览这个网站
+
+```bash
+npm ci
+npm run dev
+```
+
+默认预览地址为 `http://localhost:3000`。发布前运行 `npm run check` 和 `npm run build`。

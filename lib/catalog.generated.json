@@ -1,0 +1,87 @@
+[
+  {
+    "id": "comic-translate",
+    "kind": "skill",
+    "title": "漫画翻译与回填",
+    "summary": "读懂前后文，保留对白语气。从文字提取到定位回填，让翻译成为完整的阅读体验。",
+    "path": "skills/comic-translate",
+    "docs": "/docs/skills/comic-translate",
+    "tags": [
+      "翻译",
+      "图像",
+      "内容创作"
+    ],
+    "status": "可使用",
+    "version": "0.1.0",
+    "icon": "languages",
+    "accent": "orange",
+    "featured": true,
+    "requires": [
+      "Python 3.10+",
+      "swell-cartoon-translate",
+      "CTT_REPO"
+    ]
+  },
+  {
+    "id": "toolbox-maintainer",
+    "kind": "skill",
+    "title": "工具箱维护助手",
+    "summary": "把新的技能、连接和工作流收进工具箱，补齐使用说明，自动更新目录与文档。",
+    "path": "skills/toolbox-maintainer",
+    "docs": "/docs/skills/toolbox-maintainer",
+    "tags": [
+      "开发",
+      "效率",
+      "文档"
+    ],
+    "status": "可使用",
+    "version": "0.1.0",
+    "icon": "box",
+    "accent": "blue",
+    "requires": [
+      "Node.js 22+",
+      "本仓库"
+    ]
+  },
+  {
+    "id": "filesystem",
+    "kind": "mcp",
+    "title": "本地文件连接",
+    "summary": "给智能体一个明确的工作目录。通过官方 Filesystem MCP，连接文件读取与整理能力。",
+    "path": "mcp/configs/filesystem",
+    "docs": "/docs/mcp/filesystem",
+    "tags": [
+      "本地工具",
+      "文件",
+      "连接"
+    ],
+    "status": "配置示例",
+    "version": "0.1.0",
+    "icon": "plug",
+    "accent": "green",
+    "requires": [
+      "Node.js 22+",
+      "支持 MCP 的客户端"
+    ]
+  },
+  {
+    "id": "comic-localization",
+    "kind": "workflow",
+    "title": "从原文到阅读成品",
+    "summary": "串联文字识别、分批翻译、语义核对与排版检查，为长篇漫画保留可恢复的处理进度。",
+    "path": "workflows/comic-localization",
+    "docs": "/docs/workflows/comic-localization",
+    "tags": [
+      "翻译",
+      "效率",
+      "内容创作"
+    ],
+    "status": "流程指南",
+    "version": "0.1.0",
+    "icon": "workflow",
+    "accent": "purple",
+    "requires": [
+      "comic-translate"
+    ]
+  }
+]
