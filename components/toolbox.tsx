@@ -82,7 +82,7 @@ export function Toolbox() {
           <div className="floating-note note-top"><span className="note-dot"/> ideas → capabilities</div>
           <div className="tool-stack stack-back"/><div className="tool-stack stack-middle"/>
           <div className="tool-stack stack-front">
-            <div className="stack-title"><span className="stack-mark"><Sparkles size={18}/></span><span>MY AGENT TOOLBOX</span><span className="stack-counter">01—04</span></div>
+            <div className="stack-title"><span className="stack-mark"><Sparkles size={18}/></span><span>MY AGENT TOOLBOX</span><span className="stack-counter">01—{String(catalog.length).padStart(2, '0')}</span></div>
             <div className="stack-row"><span className="stack-icon orange"><Languages size={21}/></span><div><strong>Skills</strong><small>把经验写成可复用的能力</small></div><span className="file-label">SKILL.md</span></div>
             <div className="stack-row"><span className="stack-icon green"><Plug size={21}/></span><div><strong>MCP</strong><small>连接真实的工具与数据</small></div><span className="file-label">↗ connect</span></div>
             <div className="stack-row"><span className="stack-icon blue"><Workflow size={21}/></span><div><strong>Workflows</strong><small>让多个能力一起完成任务</small></div><span className="file-label">→ compose</span></div>

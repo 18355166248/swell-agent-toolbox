@@ -18,10 +18,9 @@ const getContentUrl = createGetUrl(docsContentRoute);
 export function getPageMarkdownUrl(page: { slugs: string[]; locale?: string }) {
   const segments = [...page.slugs, 'content.md'];
 
-  return { segments, url: asset(getContentUrl(segments, page.locale)) };
+  // Fumadocs page actions prepend the framework base path themselves.
+  return { segments, url: getContentUrl(segments, page.locale) };
 }
-
-const getImageUrl = createGetUrl(docsImageRoute);
 
 export function getPageImageUrl(page: { slugs: string[]; locale?: string }) {
   const segments = [...page.slugs, 'image.png'];

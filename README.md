@@ -2,6 +2,8 @@
 
 个人智能体工具箱：收集可复用的 Skills、MCP 连接和工作流，配套一个定制化的中文文档与展示网站。
 
+[浏览工具箱](https://18355166248.github.io/swell-agent-toolbox/) · [使用文档](https://18355166248.github.io/swell-agent-toolbox/docs/)
+
 基于 React、Next.js、Fumadocs 和 Tailwind CSS，静态导出，可部署到 GitHub Pages。
 
 ## 开始使用
